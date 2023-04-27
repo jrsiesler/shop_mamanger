@@ -30,7 +30,7 @@ class Markets(models.Model):
     name = models.CharField('razao social:', max_length=200)
     common_name = models.CharField('nome fantasia:', max_length=60)
     document_number = models.BigIntegerField('cnpj:', max_length=14)
-    creation_date = models.DateTimeField('data criacao', )
+    creation_date = models.DateTimeField('data criacao', null=True)
     market_type = models.CharField(MarketType, max_length=20, null=True)
 
 class MarketAddress(models.Model):

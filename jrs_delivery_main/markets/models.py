@@ -32,6 +32,8 @@ class Markets(models.Model):
     document_number = models.BigIntegerField('cnpj:', max_length=14)
     creation_date = models.DateTimeField('data criacao', null=True)
     market_type = models.CharField(MarketType, max_length=20, null=True)
+    integration_ifood = models.BooleanField('integra com ifood')
+    id_ifood = models.UUIDField('id da loja ifood')
 
 class MarketAddress(models.Model):
     market = models.ForeignKey(Markets, on_delete=models.CASCADE, null=True)
@@ -48,7 +50,7 @@ class MarketAddress(models.Model):
 
 
 class MarketIntegrations(models.Model):
-    market = models.ForeignKey(Markets, on_delete=models.CASCADE, null=True)
+    market = models.ForeignKey(Markets, on_delete=models.CASCADE)
     market_channel = MarketChannel
     integration_host = models.CharField(max_length=255, null=True)
     access_key = models.CharField(max_length=50, null=True)

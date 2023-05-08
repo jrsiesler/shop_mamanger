@@ -6,7 +6,6 @@ from .models import IntegrationConfig
 
 class IntegrationConfigAdmin(admin.ModelAdmin):
         model = IntegrationConfig
-
         fieldsets = [
         (None,   {'fields': ['client_id', 'client_secret', 'integration_base_url', 'integration_environment']})
     ]

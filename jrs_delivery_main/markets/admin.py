@@ -10,17 +10,12 @@ class MarketAdressInLine(admin.StackedInline):
 
 class MarketIntegrarionInLine(admin.StackedInline):
     model = MarketIntegrations
-    extra = 3
+    extra = False
 
 class MarketsAdmin(admin.ModelAdmin):
         model = Markets
         fieldsets = [
-        (None,   {'fields': ['name', 'common_name', 'document_number']}),
-        ('tipo', {'fields': ['market_type'], 'classes': ['list']})
+        (None,   {'fields': ['name', 'common_name', 'document_number']})
     ]
-        inlines = [
-        MarketAdressInLine,
-        MarketIntegrarionInLine
-        ]
 
 admin.site.register(Markets, MarketsAdmin)

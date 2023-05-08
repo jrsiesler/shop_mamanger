@@ -8,8 +8,8 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
 import os
-
 from django.core.wsgi import get_wsgi_application
+import integrationIfood.integrartion as int
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jrs_delivery_main.settings')
 
